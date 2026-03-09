@@ -1,24 +1,39 @@
-# README
+# TfL Train Arrivals
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small Rails application that displays upcoming tube arrivals using the TfL API.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Search for a station
+- Displays next train arrivals
+- Sorted by time to arrival
+- Simple readable interface
 
-* System dependencies
+## Setup
 
-* Configuration
+Clone the repository:
 
-* Database creation
+git clone https://github.com/yourname/the-train
+cd the-train
 
-* Database initialization
+Install dependencies:
 
-* How to run the test suite
+bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the server:
 
-* Deployment instructions
+rails s
 
-* ...
+Visit:
+
+http://localhost:3000
+
+## Running tests
+
+bundle exec rspec
+
+## Notes
+
+The application uses the TfL StopPoint and Arrivals APIs.
+
+API credentials are optional.

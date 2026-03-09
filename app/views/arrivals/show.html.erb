@@ -1,0 +1,45 @@
+<div style="max-width: 900px; margin: 2rem auto;">
+  <h1>Next trains: <%= @stop_name %></h1>
+
+  <form method="get" action="/" style="margin: 1rem 0;">
+    <label>
+      Station name:
+      <input name="stop" value="<%= @stop_name %>" />
+    </label>
+    <button type="submit">Search</button>
+  </form>
+
+  <% if @error.present? %>
+    <p style="color:red;"><%= @error %></p>
+  <% end %>
+
+  <% if @stop_name.present? %>
+    <p>Stop Name: <b> <%= @stop_name %> </b></p>
+  <% end %>
+
+
+  <% if @arrivals.any? %>
+    <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+      <thead>
+        <tr>
+          <th align="left">Due</th>
+          <th align="left">Line</th>
+          <th align="left">Destination</th>
+          <th align="left">Platform</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @arrivals.each do |a| %>
+          <tr style="border-top: 1px solid #D3D3D3;">
+            <td><strong><%= (a[:time_to_station] / 60.0).ceil %> min</strong></td>
+            <td><%= a[:line] %></td>
+            <td><%= a[:destination] %></td>
+            <td><%= a[:platform].presence || "-" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p style="color:grey; margin-top: 1rem;">No arrivals to display.</p>
+  <% end %>
+</div>
