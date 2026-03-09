@@ -9,11 +9,19 @@ Small Rails application that displays upcoming tube arrivals using the TfL API.
 - Sorted by time to arrival
 - Simple readable interface
 
+## Tech Stack
+
+- Ruby **3.2.2**
+- Rails **8.1.2**
+- Faraday
+- RSpec and WebMock for testing
+
+
 ## Setup
 
 Clone the repository:
 
-git clone https://github.com/yourname/the-train
+git clone https://github.com/UmairAhmad125/the-train.git
 cd the-train
 
 Install dependencies:
