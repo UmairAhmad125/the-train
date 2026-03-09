@@ -22,6 +22,7 @@ Small Rails application that displays upcoming tube arrivals using the TfL API.
 Clone the repository:
 
 git clone https://github.com/UmairAhmad125/the-train.git
+
 cd the-train
 
 Install dependencies:
